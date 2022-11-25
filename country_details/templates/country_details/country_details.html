@@ -6,9 +6,50 @@
 
 <div class="container-fluid">
   <main>
-    <div class="position-relative overflow-hidden p-3 text-align-left">
+    <div class="position-relative overflow-hidden p-3 text-center ">
         <h2>Airbnb Belgium data Analysis</h2>
-        
+        <div class="container">
+          <h4>Question 1</h4>
+          <h6>Calculez le nombre d’hosts et le nombre de review par quartier (neighbourhood_cleansed)</h6>
+          <br>
+          {{ rep1 | safe }}
+          <br>
+          <h4>Question 2</h4>
+          <h6>Quels sont les pourcentage d’acceptation et de réponse moyen des hosts ?</h6>
+          <br>
+          {{ rep2 | safe }}
+          <br><br>
+          <h4>Question 3</h4>
+          <h6>Quel pourcentage des hosts on une vérification par téléphone, par email, par email pro ?</h6>
+          <br>
+          {{ rep3 | safe }}
+          <br><br>
+          <h4>Question 4</h4>
+          <h6>En fonction du type de room, calculez le nombre moyen d’amenities et l'écart type.</h6>
+          <br>
+          {{ rep4 | safe }}
+          <br><br>
+          <h4>Question 5</h4>
+          <h6>Quel est le prix median par type de room, le maximum, le minimum, le premier et le troisième quartile ?</h6>
+          <br>
+          {{ rep5 | safe }}
+          <br><br>
+          <h4>Question 6</h4>
+          <h6>Combien y-a-t-il d’annonces par "valeur de salle de bain" ?</h6>
+          <br>
+          {{ rep6 | safe }}
+          <br><br>
+          <h4>Question 7</h4>
+          <h6>Il y a t’il une corrélation entre le nombre de reviews et la taille de la description en terme de nombre de caractères ?</h6>
+          <br>
+          {{ rep7 | safe }}
+          <br><br>
+          <h4>Question 8</h4>
+          <h6>Calculez le nombre d’hosts et le nombre de review par quartier (neighbourhood_cleansed)</h6>
+          <br>
+          {{ rep8 | safe }}
+          <br><br>
+        </div>
     </div>
 </div>
 </main>
