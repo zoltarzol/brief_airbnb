@@ -4,11 +4,14 @@
 
 {% block content %}
 
+{% url 'country_details' as url_country_details %}
+
 <div class="container-fluid">
   <main>
-    <div class="position-relative overflow-hidden p-3 text-center">
-      <a href=""></a>
-      <img src="{% static 'home/belgian_cities-edited.svg' %}" width=650>
+    <div class="position-relative overflow-hidden text-center">
+      <h3>Welcome to the Airbnb Data Analyser</h3>
+      <h6>Click <a href="{{ url_country_details }}">here</a> or on the image below to access the Detailed Analysis for Belgium</h6>
+      <img src="{% static 'home/belgian_cities-edited.svg' %}" width="35%">
     </div>
 </div>
 </main>
