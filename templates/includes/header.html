@@ -2,12 +2,14 @@
 {% url 'country_details' as url_country_details %}
 {% url 'about_us' as url_about_us %}
 
-<header class="text-bg-dark">
+{% load static %}
 
-  <div class="d-flex justify-content-center py-3">
-
-    <ul class="nav">
-      <li class="fs-4 ms-4">
+<div class="container-fluid text-bg-dark">
+  <header class="d-flex justify-content-center py-3 mb-4 text-bg-dark">
+    <img class="d-flex align-items-center  text-dark text-decoration-none"
+      src="{% static 'home/DEV_IA_Brief_Airbnb_data_analyzer.png' %}" width=400 height="47">
+    <ul class="nav ms-5 me-5">
+      <li class="fs-5 ms-1">
         <a href="/" class="nav-link
                 {% if request.path == url_home %}
                 text-secondary">
@@ -17,32 +19,34 @@
           Home
         </a>
       </li>
-      <li class="fs-4 ms-4">
-        <a href="#" class="nav-link
+      <li class="fs-5 ms-1">
+        <a href="{{url_country_details}}" class="nav-link
                 {% if request.path == url_country_details %}
                 text-secondary">
-                {% else %}
-                text-white">
-                {% endif %}
-                Country Details
+          {% else %}
+          text-white">
+          {% endif %}
+          Country Details
         </a>
       </li>
-      <li class="fs-4 ms-4">
+      <li class="fs-5 ms-1">
         <a href="#" class="nav-link
             {% if request.path == url_about_us %}
                 text-secondary">
-                {% else %}
-                text-white">
-                {% endif %}
-                About us
+          {% else %}
+          text-white">
+          {% endif %}
+          About us
         </a>
       </li>
-      <li class="fs-4 ms-4">
+      <li class="fs-5 ms-1">
         <a href="https://github.com/zoltarzol/brief_airbnb" target="_blank" class="nav-link">GitHub Repository
         </a>
       </li>
     </ul>
+      <button type="button" class="btn btn-outline-dark me-2 bg-dark text-light">Login</button>
+      <button type="button" class="btn btn-warning text-dark">Sign-up</button>
 
-  </div>
+</div>
 
 </header>
