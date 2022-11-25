@@ -2,41 +2,47 @@
 {% url 'country_details' as url_country_details %}
 {% url 'about_us' as url_about_us %}
 
-<header class="p-3 text-bg-dark">
-    <div class="container-fluid">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
+<header class="text-bg-dark">
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2
+  <div class="d-flex justify-content-center py-3">
+
+    <ul class="nav">
+      <li class="fs-4 ms-4">
+        <a href="/" class="nav-link
                 {% if request.path == url_home %}
                 text-secondary">
-                {% else %}
-                text-white">
-                {% endif %}
-                Home</a></li>
-            <li><a href="#" class="nav-link px-2
+          {% else %}
+          text-white">
+          {% endif %}
+          Home
+        </a>
+      </li>
+      <li class="fs-4 ms-4">
+        <a href="#" class="nav-link
                 {% if request.path == url_country_details %}
                 text-secondary">
                 {% else %}
                 text-white">
                 {% endif %}
-                Country Details</a></li>
-          <li><a href="#" class="nav-link px-2
+                Country Details
+        </a>
+      </li>
+      <li class="fs-4 ms-4">
+        <a href="#" class="nav-link
             {% if request.path == url_about_us %}
                 text-secondary">
                 {% else %}
                 text-white">
                 {% endif %}
-                About us</a></li>
-        </ul>
+                About us
+        </a>
+      </li>
+      <li class="fs-4 ms-4">
+        <a href="https://github.com/zoltarzol/brief_airbnb" target="_blank" class="nav-link">GitHub Repository
+        </a>
+      </li>
+    </ul>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
-        </div>
-      </div>
-    </div>
-  </header>
+  </div>
+
+</header>
