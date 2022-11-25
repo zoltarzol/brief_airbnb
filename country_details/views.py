@@ -13,7 +13,7 @@ def country_details_view(request):
     df_groupby = df_preparation.groupby(by="neighbourhood_cleansed").apply(lambda s: pd.Series({ 
     "host_id nunique": s["host_id"].nunique(), 
     "number_of_reviews sum": s["number_of_reviews"].sum(),}))
-    rep1 = df_groupby.to_html(classes='table',justify='center')
+    rep1 = df_groupby.to_html(classes='table table-dark table-striped',justify='center')
 
     df_correction_host_response_rate = df_air_bnb_anvers.host_response_rate.str.replace('%','')
     df_correction_host_response_rate_modifie= pd.to_numeric(df_correction_host_response_rate)
@@ -41,7 +41,7 @@ def country_details_view(request):
     df_reponse4 = df_preparation.groupby(by="room_type").apply(lambda s: pd.Series({ 
     "amenities mean": s["amenities"].mean(),
      "amenities std": s["amenities"].std()}))
-    rep4 = df_reponse4.to_html(classes='table',justify='center')
+    rep4 = df_reponse4.to_html(classes='table table-dark table-striped',justify='center')
 
     df_final= df_air_bnb_anvers
     df_final["price"]=pd.to_numeric(df_final["price"].str.replace('$','').str.replace(',',''))
@@ -51,7 +51,7 @@ def country_details_view(request):
     "price max": s["price"].max(),
     "price min": s["price"].min(),
     "price first_quartile": s["price"].quantile(0.25),
-    "price third_quartile": s["price"].quantile(0.75)})).to_html(classes='table',justify='center')
+    "price third_quartile": s["price"].quantile(0.75)})).to_html(classes='table table-dark table-striped',justify='center')
     
     df_annonce = df_air_bnb_anvers.bathrooms_text
     df_annonce = df_annonce.apply(lambda s: pd.Series({ 
@@ -66,14 +66,14 @@ def country_details_view(request):
     df_annonce_finale["nombres_de_baignoires"]=df_baignoire["nombre_de_baignoire"].astype(float)
     df_annonce_finale =[x*y for x,y in zip(df_annonce_finale.nombres_de_baignoires , df_annonce_finale.caracteristique_nombre) ] 
     df_annonce_finale = pd.DataFrame(df_annonce_finale,columns=["valeur_baignoire"])
-    rep6 = df_annonce_finale.to_html(classes='table',justify='center')
+    rep6 = df_annonce_finale.to_html(classes='table table-dark table-striped',justify='center')
 
     df_description = df_air_bnb_anvers["description"].str.len()
     #Je change la description en nombre de caractères
     df_description= pd.DataFrame(df_description,columns=["description"])
     df_description["number_of_reviews"]=df_air_bnb_anvers["number_of_reviews"]
     #Je transforme df_description en dataframe et je rajoute le nombre de review
-    rep7 = df_description.corr().to_html(classes='table',justify='center')
+    rep7 = df_description.corr().to_html(classes='table table-dark table-striped',justify='center')
 
     df_air_bnb_anvers_verification = pd.read_csv("data/Antwerp/data/reviews.csv")
     df_listing_reviews = df_air_bnb_anvers.merge(df_air_bnb_anvers_verification, left_on='id', right_on='listing_id') 
