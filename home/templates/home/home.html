@@ -1,31 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-{% comment %} <h2>BIENVENUE SUR COIN AGRICOLE !</h2>
-<h6>Premier test :</h6> {{test}} <br><br>
-<h6>Le carré de 6 est :</h6> {{carre_6}} <br><br>
-<h6>Affichage d'une liste par défaut :</h6> {{weekdays}} <br><br>
-<h6>Affichage d'une liste formattée :</h6>
-<ul>
-    {% for day in weekdays %}
-    <li> {{day}}</li>
-    {% endfor %}
-</ul>
-{% if weekdays.1 == 'Tuesday' %}
-    <h6>Second day of the week is</h6> {{weekdays.1}} <br><br>
-{% endif %} {% endcomment %}
+{% url 'country_details' as url_country_details %}
+
 <div class="container-fluid">
   <main>
-    <div class="position-relative overflow-hidden p-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h6 class="display-4 fw-normal"></h6>
-        <h1><span class="badge bg-secondary">Airbnb Data Analysis</span></h1>
-        <p class="lead fw-normal">Subtext (to be updated)</p>
-        <button type="button" class="btn btn-primary">Button (to be updated)</button>
-      </div>
+    <div class="position-relative overflow-hidden text-center">
+      <h3>Welcome to the Airbnb Data Analyser</h3>
+      <h6>Click <a href="{{ url_country_details }}">here</a> or on the image below to access the Detailed Analysis for Belgium</h6>
+      <img src="{% static 'home/belgian_cities-edited.svg' %}" width="35%">
     </div>
-  </main>
+</div>
+</main>
 </div>
 
 {% endblock content %}

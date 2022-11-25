@@ -12,8 +12,5 @@ def home_view(request):
     # import pudb; pu.db()
     return render(request,'home/home.html', context=context)
 
-# def about_view(request):
-#     return render(request,'divers/about_page.html')
-
-# def team_view(request):
-#     return render(request,'divers/team_page.html')
+def about_us_view(request):
+    return render(request,'home/about_us.html')
